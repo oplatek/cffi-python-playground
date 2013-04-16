@@ -15,4 +15,4 @@ PROJECTS USING CFFI
     https://github.com/search?q-cffi+python&type-Repositories&ref-searchresults
     https://github.com/felipecruz/zmqpy  # failing imports
     https://github.com/apendleton/python-lz4-cffi # todo
-    https://github.com/SimonSapin/cairocffi  # looks big bug maintened enough
+    https://github.com/SimonSapin/cairocffi  # looks maintened enough
