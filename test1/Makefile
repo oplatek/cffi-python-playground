@@ -5,7 +5,7 @@
 
 # Created after: http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
 
-CC = g++
+CC = gcc
 SRCS = ctest1.c ctest2.c 
 OBJS = $(SRCS:.c=.o)
 DEPS = $(SRCS:.c=.o)
@@ -22,7 +22,7 @@ LIB_LOCATION = $(PWD)
 all: run_dynamic run_static
 
 clean:
-	rm -f *.so *.so.[0-9] *.so.[0-9].[0-9] *.o $(PROGRAM) static_$(PROGRAM)
+	rm -f *.a *.so *.so.[0-9] *.so.[0-9].[0-9] *.o $(PROGRAM) static_$(PROGRAM)
 
 ### Default patterns
 %.o: %.c $(DEPEND)

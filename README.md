@@ -1,6 +1,16 @@
 Cffi-python-playground
 ======================
 
+EXAMPLES
+--------
+In order to run test1
+    ```sh
+    cd test1 && make
+    ```
+Then you can execute the `cffi_test.py` from any directory e.g. from the root of this repo by setting the `LD_LIBRARY_PATH` variable to directory `test1` in this repo. 
+
+LD_LIBRARY_PATH=test1 python test1/cffi_test1.py
+
 Playground for learning and testing cffi python interface
 
 LINKS
