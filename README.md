@@ -1,3 +1,7 @@
+INTRO
+=====
+This is playground implementation of python cffi interface.
+
 LINKS
 =====
 http://eli.thegreenplace.net/2013/03/09/python-ffi-with-ctypes-and-cffi/
@@ -13,13 +17,4 @@ https://github.com/apendleton/python-lz4-cffi # todo
 https://github.com/SimonSapin/cairocffi  # looks big bug maintened enough
 
 
-NOTES
-=====
-Cffi is in pypi and is heading to be part of standard python installation.
-Does cffi require PyPi trunk? What does it mean for us?
-README.txt
 
-GITHUB projects:
-=====
-cairocffi
-python-lz4-cffi
