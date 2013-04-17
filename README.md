@@ -2,7 +2,7 @@ Cffi-python-playground
 ======================
 Playground for learning and testing cffi python interface.
 In order to use *cffi* install it! See this page
-http://cffi.readthedocs.org/en/release-0.6/ for more info.
+http://cffi.readthedocs.org/ for more info.
 
 EXAMPLES
 --------
@@ -25,7 +25,7 @@ LINKS
 * http://eli.thegreenplace.net/2013/03/09/python-ffi-with-ctypes-and-cffi/
 * https://groups.google.com/forum/#!msg/python-cffi/
 * https://pypi.python.org/pypi/cffi
-* http://cffi.readthedocs.org/en/release-0.6/
+* http://cffi.readthedocs.org/
 
 PROJECTS USING CFFI 
 -------------------
