@@ -17,7 +17,7 @@ PROGRAM = prog
 
 LIB_LOCATION = $(PWD) 
 
-.PHONY: dynamic clean all run_dynamic
+.PHONY: dynamic clean all run_dynamic run_static
 
 all: run_dynamic run_static
 
