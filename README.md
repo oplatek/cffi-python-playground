@@ -31,3 +31,8 @@ PROJECTS USING CFFI
 * https://github.com/felipecruz/zmqpy  # failing imports
 * https://github.com/apendleton/python-lz4-cffi # todo
 * https://github.com/SimonSapin/cairocffi  # looks maintened enough
+
+TIPS
+----
+* Always compile with gcc
+* Name your files `*.c` not `*.cc` otherwise `gcc` will compile it like C++ file
