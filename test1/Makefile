@@ -48,6 +48,7 @@ $(PROGRAM): dynamic  $(PROGRAM).c
 run_dynamic: $(PROGRAM)
 	@echo '======= Running dynamicaly linked program ====='
 	LD_LIBRARY_PATH=$(PWD) $(PWD)/$<
+	@echo '======= Finished dynamicaly linked program ====='
 
 
 ### static part
@@ -60,3 +61,4 @@ static_$(PROGRAM): $(PROGRAM).c  $(AR_FILE)
 run_static: static_$(PROGRAM)
 	@echo '======= Running staticly linked program ====='
 	$(PWD)/$<
+	@echo '======= Finished staticly linked program ====='
