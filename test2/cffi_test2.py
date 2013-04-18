@@ -4,19 +4,22 @@
 # Modified: 12:35:21 15/04/2013
 
 from cffi import FFI
+import sys
 
 
 def test_simple():
     ffi = FFI()
-    with open('test.h') as r:
-        header = r.read()
-    header = '''int cpp_like_main(int argc, char *argv[]); '''
-
+    # Cannot load header directly
+    # cffi does not parse directives yet
+    header = '''int cpp_test(int argc, char **argv); '''
     ffi.cdef(header)
-    lib = ffi.dlopen('libcpp.so')
+    lib = ffi.dlopen('libcpptest.so')
 
-    args = ['testing', 'arguments', ':)']
-    lib.cpp_like_main(len(args), args)
+    args = sys.argv
+    argv_keepalive = [ffi.new("char[]", arg) for arg in args]
+    argv = ffi.new("char *[]", argv_keepalive)
+
+    lib.cpp_test(len(args), argv)
 
 if __name__ == '__main__':
     test_simple()
