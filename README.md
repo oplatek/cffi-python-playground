@@ -30,11 +30,11 @@ Shows how to wrap simple C++ shared library with C compatible header and use it 
 In order to run *test2* change to directory test2.
 
 ```sh
-cd test1 && make
+cd test2 && make
 ```
 From that directory (or set up `LD_LIBRARY_PATH` as explained in example 1) you can run
 * The `C` program which wraps `C++` library
-* The python program which uses the `C++` library with `C` linkage
+* The Python program which uses the `C++` library with `C` linkage
 
 ```sh
 # C program launched from test2 directory
