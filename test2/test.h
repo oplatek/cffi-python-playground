@@ -3,17 +3,20 @@
 // Created:  16:38:24 17/04/2013
 // Modified: 16:38:24 17/04/2013
 
-#ifndef TEST_H
-#define TEST_H
+#ifndef __TEST_H__
+#define __TEST_H__
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif // #ifdef __cplusplus
 
-int cpp_like_main(int argc, char *argv[]);
+#include <stdint.h>  // Any C-compatible headers
+
+int cpp_test(int argc, char **argv);
 
 #ifdef __cplusplus
 }
-#endif
+#endif // #ifdef __cplusplus
 
-#endif
+
+#endif // #ifndef __TEST_H__

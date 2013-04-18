@@ -13,7 +13,7 @@ def test_simple():
     header = '''int cpp_like_main(int argc, char *argv[]); '''
 
     ffi.cdef(header)
-    lib = ffi.dlopen('libcpptest.so')
+    lib = ffi.dlopen('libcpp.so')
 
     args = ['testing', 'arguments', ':)']
     lib.cpp_like_main(len(args), args)

@@ -3,9 +3,11 @@
 // Created:  11:12:05 15/04/2013
 // Modified: 11:12:05 15/04/2013
 
+#include <stdio.h>
 
 #include "test.h"
 
-int main(int argc, char *argv[]) {
-    return cpp_like_main(argc, argv);
+int main(int argc, char **argv) {
+    printf("I am C program\n");
+    return cpp_test(argc, argv);
 }
