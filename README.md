@@ -6,7 +6,11 @@ http://cffi.readthedocs.org/ for more info.
 
 EXAMPLES
 --------
-In order to run *test1* change to directory test1
+
+###Example 1###
+Shows how to build C shared library and use it via cffi.
+
+In order to run *test1* change to directory test1.
 
 ```sh
 cd test1 && make
@@ -19,6 +23,43 @@ Do not forget to set the `LD_LIBRARY_PATH` variable to directory `test1` in this
 ```sh
 LD_LIBRARY_PATH=test1 python test1/cffi_test1.py
 ```
+
+###Example 2###
+Shows how to wrap simple C++ shared library with C compatible header and use it in cffi.
+
+In order to run *test2* change to directory test2.
+
+```sh
+cd test1 && make
+```
+From that directory (or set up `LD_LIBRARY_PATH` as explained in example 1) you can run
+* The `C` program which wraps `C++` library
+* The python program which uses the `C++` library with `C` linkage
+
+```sh
+# C program launched from test2 directory
+test2$ ./prog my test parameters get printed
+I am C program
+It works!:
+./prog
+my
+test
+parameters
+get
+printed
+```
+
+```sh
+# Python program launched from test2 directory
+test2$ python cffi_test2.py test parameters get printed
+It works!:
+cffi_test2.py
+test
+parameters
+get
+printed
+```
+
 
 LINKS
 -----
