@@ -68,7 +68,7 @@ LINKS
 * https://pypi.python.org/pypi/cffi
 * http://cffi.readthedocs.org/
 
-PROJECTS USING CFFI 
+PROJECTS USING CFFI
 -------------------
 * https://github.com/search?q-cffi+python&type-Repositories&ref-searchresults
 * https://github.com/felipecruz/zmqpy  # failing imports
@@ -79,3 +79,4 @@ TIPS
 ----
 * Always compile with gcc
 * Name your files `*.c` not `*.cc` otherwise `gcc` will compile it like C++ file
+* During linking your shared library put `-Lpathtoyourlibdirectory -lyourlibname` as last parameters to `gcc`.
