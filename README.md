@@ -32,13 +32,13 @@ In order to run *test2* change to directory test2.
 ```sh
 cd test2 && make
 ```
-From that directory (or set up `LD_LIBRARY_PATH` as explained in example 1) you can run
+From that directory you can run
 * The `C` program which wraps `C++` library
 * The Python program which uses the `C++` library with `C` linkage
 
 ```sh
 # C program launched from test2 directory
-test2$ ./prog my test parameters get printed
+test2$ LD_LIBRARY_PATH=. ./prog my test parameters get printed
 I am C program
 It works!:
 ./prog
@@ -51,7 +51,7 @@ printed
 
 ```sh
 # Python program launched from test2 directory
-test2$ python cffi_test2.py test parameters get printed
+test2$ LD_LIBRARY_PATH=. python cffi_test2.py test parameters get printed
 It works!:
 cffi_test2.py
 test
