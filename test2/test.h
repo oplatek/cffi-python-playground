@@ -1,7 +1,5 @@
 // -*- coding: utf-8 -*-
 // Author:   Ondrej Platek,2013, code is without any warranty!
-// Created:  16:38:24 17/04/2013
-// Modified: 16:38:24 17/04/2013
 
 #ifndef __TEST_H__
 #define __TEST_H__
