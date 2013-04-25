@@ -16,16 +16,14 @@ clean:
 	rm -f *.so *.o prog
 
 ### Default patterns
-%.o: %.c 
+%.o: %.c %.h
 	    $(CC) -Wall -fPIC -c -o $@ $<
-%.o: %.cc
+%.o: %.cc %.h
 	    $(CXX) -Wall -fPIC -c -o $@ $<
 
-# $(LDD_FILE): test.o ctest.o myclass.o
-# 	$(CXX) -fPIC -shared -Wl,-export-dynamic -o $@ $^
-
+### Test2 logic
 $(LDD_FILE): test.o myclass.o
 	$(CXX) -fPIC -shared -Wl,-export-dynamic -o $@ $^
 
-prog: prog.c test.h prog.o $(LDD_FILE)
+prog: prog.o $(LDD_FILE)
 	$(CC) -o $@  prog.o -L. -l$(LDD_NAME)
