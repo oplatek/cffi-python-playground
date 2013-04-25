@@ -5,10 +5,9 @@
 
 #include <stdio.h>
 
-#include "ctest.h"
 #include "test.h"
 
 int main(int argc, char **argv) {
     printf("I am C program\n");
-    return c_test(argc, argv);
+    return cpp_test(argc, argv);
 }
