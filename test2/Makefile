@@ -26,4 +26,4 @@ $(LDD_FILE): test.o myclass.o
 	$(CXX) -fPIC -shared -Wl,-export-dynamic -o $@ $^
 
 prog: prog.o $(LDD_FILE)
-	$(CC) -o $@  prog.o -L. -l$(LDD_NAME)
+	$(CC) -o $@ $< -L. -l$(LDD_NAME)
