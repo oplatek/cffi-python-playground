@@ -27,8 +27,3 @@ int cpp_test(int argc, char *argv[]) {
 
     return 0;
 }
-
-// int main(int argc, char *argv[]) {
-//     return cpp_test(argc, argv);
-// }
-
