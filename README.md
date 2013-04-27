@@ -65,9 +65,9 @@ I tried to use shared library which needs another shared library.
 In our example `libtest1.so` needs `libtest2.so`.
 
 I am using `ffi.verify` function. The example works.
-_However I am still not satisfied, because I need to change `tmpdir=.`
+*However I am still not satisfied, because I need to change `tmpdir=.`
 It means that the temporary c file is compiled at current directory,
-so it messes the directory completally_
+so it messes the directory completally*
 
 To compile the library and test the example run following commands.
 ```sh
