@@ -2,6 +2,7 @@
 # Author:   Ondrej Platek,2013, code is without any warranty!
 
 from cffi import FFI
+import os
 
 
 def test_simple():
@@ -12,7 +13,7 @@ def test_simple():
         with open('prog.c') as r:
             src = r.read()
             # The tmpdir needs to set to '.' otherwise headers are not found
-            lib = ffi.verify(src, tmpdir='.', libraries=['test1', 'test2', 'test3'])
+            lib = ffi.verify(src, include_dirs=[os.path.abspath('.')], libraries=['test1', 'test2', 'test3'])
             # The main function is here treated as common library function
             lib.main()
     except Exception as inst:

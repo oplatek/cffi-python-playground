@@ -17,7 +17,7 @@ LDD_FILE3 = lib$(LDD_NAME3).so
 all: prog 
 
 clean:
-	rm -f *.so *.o prog
+	rm -rf *.so *.o prog __pycache__
 
 ### Default patterns
 %.o: %.c %.h
