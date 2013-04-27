@@ -70,7 +70,7 @@ To compile the library and test the example run following commands.
 ```sh
 cd test3 && make # Compile shared library and testing C program
 ./prog   # Run the testing C program
-LIBRARY_PATH=. ./cffi_test3.py  # Run the example. Set the LIBRARY_PATH variable needed for gcc compilation
+./cffi_test3.py  # Run the example. 
 
 ```
 
