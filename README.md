@@ -60,6 +60,23 @@ get
 printed
 ```
 
+### Example 3###
+I tried to use shared library which needs another shared library.
+In our example `libtest1.so` needs `libtest2.so`.
+
+I am using `ffi.verify` function. The example works.
+_However I am still not satisfied, because I need to change `tmpdir=.`
+It means that the temporary c file is compiled at current directory,
+so it messes the directory completally_
+
+To compile the library and test the example run following commands.
+```sh
+cd test3 && make # Compile shared library and testing C program
+./prog   # Run the testing C program
+LIBRARY_PATH=. ./cffi_test3.py  # Run the example. Set the LIBRARY_PATH variable needed for gcc compilation
+
+```
+
 
 LINKS
 -----
