@@ -1,5 +1,13 @@
 #include <string.h>
 
+typedef char mychar;
+typedef unsigned long mysize;
+void save_to_buffer(mychar ** buff, mysize * size, char * msg) {
+    *size = 5;
+    *buff = (char*) malloc(sizeof(char) * *size);
+    strcpy(*buff, "Ahoj");
+}
+
 int testInt(void) {
     return 3;
 }
