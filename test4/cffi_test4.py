@@ -24,8 +24,6 @@ def test_verify():
     #else
         printf("Compilition makro is off!\n");
     #endif
-        double deg= 30.0;
-
         return 0;
     }
     '''
