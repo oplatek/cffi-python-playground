@@ -1,8 +1,8 @@
 Cffi-python-playground
 ======================
 Playground for learning and testing cffi python interface.
-In order to use *cffi* install it! See this page
-http://cffi.readthedocs.org/ for more info.
+In order to use *cffi*, install it! 
+See this page http://cffi.readthedocs.org/ for more info.
 
 EXAMPLES
 --------
