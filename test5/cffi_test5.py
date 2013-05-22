@@ -10,14 +10,20 @@ void testInt2(int * x);
 int testArray(int * x);
 
 void save_to_buffer(mychar ** buff, mysize * size, char * msg);
+void save_to_DoubleBuffer(double ** buff, mysize * size, char * msg);
 '''
 ffi.cdef(header)
 
 with open('source.c', 'r') as s:
     lib = ffi.verify(s.read())
 
+buffer_pointer, buffer_size = ffi.new('double **'), ffi.new('mysize *')
+lib.save_to_DoubleBuffer(buffer_pointer, buffer_size, ffi.new('char[]', b'test 1'))
+mybytes = ffi.buffer(buffer_pointer[0], buffer_size[0])
+mybytes = mybytes[:]
+
 buffer_pointer, buffer_size = ffi.new('mychar **'), ffi.new('mysize *')
-lib.save_to_buffer(buffer_pointer, buffer_size, ffi.new('char[]', b'Ondra test'))
+lib.save_to_buffer(buffer_pointer, buffer_size, ffi.new('char[]', b'Ondra'))
 mybytes = ffi.string(buffer_pointer[0], buffer_size[0])
 print 'printing return char %s' % mybytes
 print 'buffer_size %d' % buffer_size[0]
