@@ -41,8 +41,8 @@ dynamic: $(LDD_FILE)
 
 # Generating LDD_FILE from AR_FILE static library
 $(LDD_FILE): $(AR_FILE)  ctest3.o
-	# $(CC) -shared -o $@ -Wl,-whole-archive $^ -W1,--no-whole-archive # TODO
 	ld --shared -o $@ -whole-archive $(AR_FILE) ctest3.o  # works also with -s // strip option why?
+	# $(CC) -shared -Wl,-export-dynamic -o $@ $^
 
 # Compiling the main program
 # exapmle usage gcc -Wall -I/path/to/include-files -L/path/to/libraries prog.c -lctest -o prog
@@ -60,8 +60,8 @@ run_dynamic: $(PROGRAM)
 $(AR_FILE): $(OBJS) 
 	ar -cvq $@ $^
 
-static_$(PROGRAM): $(PROGRAM).c  $(AR_FILE)
-	$(CC) -o $@ $(PROGRAM).c -L$(PWD) -l$(LIB_NAME)
+static_$(PROGRAM): $(PROGRAM).c  $(AR_FILE) ctest3.o
+	$(CC) -o $@  $^
 
 run_static: static_$(PROGRAM)
 	@echo '======= Running staticly linked program ====='
