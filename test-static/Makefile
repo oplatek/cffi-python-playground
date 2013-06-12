@@ -35,9 +35,14 @@ dynamic: $(LDD_FILE)
 	ln -sf $< `echo $< | sed -e 's:.[0-9]\.[0-9]::'`
 	ln -sf $< `echo $< | sed -e 's:.[0-9]\.[0-9]:.2:'`
 
-$(LDD_FILE): $(OBJS)
-	$(CC) -shared -Wl,-soname,$@ -o $@ $^
 
+# # Generating LDD_FILE directly from *.o
+# $(LDD_FILE): $(OBJS)
+# 	$(CC) -shared -Wl,-soname,$@ -o $@ $^
+
+# Generating LDD_FILE from AR_FILE static library
+$(LDD_FILE): $(AR_FILE)
+	$(CC) -shared -o $@ -Wl,--whole-archive $^ -W1,--no-whole-archive
 
 # Compiling the main program
 # exapmle usage gcc -Wall -I/path/to/include-files -L/path/to/libraries prog.c -lctest -o prog
