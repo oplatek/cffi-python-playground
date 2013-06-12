@@ -6,8 +6,8 @@
 // Modifed after: http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
 
 #include <stdio.h>
-void ctest1(int *);
-void ctest2(int *);
+#include "ctest1.h"
+#include "ctest2.h"
 
 int main()
 {

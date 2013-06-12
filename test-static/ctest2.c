@@ -5,6 +5,7 @@
 
 // Modifed after: http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
 
+#include "ctest2.h"
 
 void ctest2(int *i)
 {
