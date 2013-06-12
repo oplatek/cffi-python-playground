@@ -9,5 +9,6 @@
 
 void ctest3(int *i)
 {
-       *i=1000;
+   ctest1(i);
+   ctest2(i);
 }

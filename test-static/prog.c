@@ -12,7 +12,7 @@
 
 int main()
 {
-    int x;
+    int x=2;
     ctest1(&x);
     printf("Valx=%d\n",x);
 

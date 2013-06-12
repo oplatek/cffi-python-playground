@@ -9,5 +9,5 @@
 
 void ctest1(int *i)
 {
-       *i=5;
+       *i=10 * (*i);
 }
