@@ -42,7 +42,9 @@ dynamic: $(LDD_FILE)
 
 # Generating LDD_FILE from AR_FILE static library
 $(LDD_FILE): $(AR_FILE)
-	$(CC) -shared -o $@ -Wl,--whole-archive $^ -W1,--no-whole-archive
+	# $(CC) -shared -o $@ -Wl,--whole-archive $^ -W1,--no-whole-archive
+	ld --shared -s -o $@ -whole-archive $<
+	# ld --shared -h $@ -o $@ -whole-archive $<
 
 # Compiling the main program
 # exapmle usage gcc -Wall -I/path/to/include-files -L/path/to/libraries prog.c -lctest -o prog
