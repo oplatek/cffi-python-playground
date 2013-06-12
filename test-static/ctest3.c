@@ -5,9 +5,9 @@
 
 // Modifed after: http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
 
-#include "ctest1.h"
+#include "ctest3.h"
 
-void ctest1(int *i)
+void ctest3(int *i)
 {
-       *i=5;
+       *i=1000;
 }

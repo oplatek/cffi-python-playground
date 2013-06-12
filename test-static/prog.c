@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include "ctest1.h"
 #include "ctest2.h"
+#include "ctest3.h"
 
 int main()
 {
@@ -16,6 +17,9 @@ int main()
     printf("Valx=%d\n",x);
 
     ctest2(&x);
+    printf("Valx=%d\n",x);
+
+    ctest3(&x);
     printf("Valx=%d\n",x);
 
     return 0;

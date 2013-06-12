@@ -8,7 +8,6 @@
 CC = gcc
 SRCS = ctest1.c ctest2.c 
 OBJS = $(SRCS:.c=.o)
-DEPS = $(SRCS:.c=.o)
 LIB_NAME = ctest
 VERSION = 1.0
 LDD_FILE = lib$(LIB_NAME).so.$(VERSION)
@@ -41,9 +40,9 @@ dynamic: $(LDD_FILE)
 # 	$(CC) -shared -Wl,-soname,$@ -o $@ $^
 
 # Generating LDD_FILE from AR_FILE static library
-$(LDD_FILE): $(AR_FILE)
-	# $(CC) -shared -o $@ -Wl,--whole-archive $^ -W1,--no-whole-archive # TODO
-	ld --shared -o $@ -whole-archive $<  # works also with -s // strip option why?
+$(LDD_FILE): $(AR_FILE)  ctest3.o
+	# $(CC) -shared -o $@ -Wl,-whole-archive $^ -W1,--no-whole-archive # TODO
+	ld --shared -o $@ -whole-archive $(AR_FILE) ctest3.o  # works also with -s // strip option why?
 
 # Compiling the main program
 # exapmle usage gcc -Wall -I/path/to/include-files -L/path/to/libraries prog.c -lctest -o prog
