@@ -41,7 +41,7 @@ dynamic: $(LDD_FILE)
 
 # Generating LDD_FILE from AR_FILE static library
 $(LDD_FILE): $(AR_FILE)  ctest3.o
-	$(CC) -shared -o $@ -Wl,-export-dynamic,--whole-archive $(AR_FILE) ctest3.o -Wl,--no-whole-archive
+	$(CC) -shared -o $@ -Wl,-export-dynamic,--whole-archive $(AR_FILE) -Wl,--no-whole-archive ctest3.o
 
 # Compiling the main program
 # exapmle usage gcc -Wall -I/path/to/include-files -L/path/to/libraries prog.c -lctest -o prog
