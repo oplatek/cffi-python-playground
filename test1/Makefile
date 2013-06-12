@@ -56,7 +56,7 @@ $(AR_FILE): $(OBJS)
 	ar -cvq $@ $^
 
 static_$(PROGRAM): $(PROGRAM).c  $(AR_FILE)
-	$(CC) -o $@ $(PROGRAM).c -L$(PWD) -l$(LIB_NAME)
+	$(CC) -o $@ $(PROGRAM).c  $(AR_FILE)
 
 run_static: static_$(PROGRAM)
 	@echo '======= Running staticly linked program ====='
