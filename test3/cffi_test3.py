@@ -13,11 +13,12 @@ def test_simple():
         with open('prog.c') as r:
             src = r.read()
             # The tmpdir needs to set to '.' otherwise headers are not found
-            cwd = os.path.abspath('.')
+            libdir = os.path.abspath('.')
             lib = ffi.verify(
                 src,
-                include_dirs=[cwd],
-                library_dirs=[cwd],
+                include_dirs=[libdir],
+                library_dirs=[libdir],
+                runtime_library_dirs=[libdir],
                 libraries=['test1', 'test2', 'test3'])
             # The main function is here treated as common library function
             lib.main()
